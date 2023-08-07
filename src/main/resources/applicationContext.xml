@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd">
+    <context:property-placeholder location="classpath:application.properties"/>
+    <bean id="sun"
+          class="org.example.Sun">
+    </bean>
+    <bean id="moon"
+          class="org.example.Moon">
+    </bean>
+    <bean id="jupiter"
+          class="org.example.Jupiter">
+    </bean>
+<bean id="planeta"
+      class="org.example.Planet">
+    <property name="universe">
+        <list>
+            <ref bean="sun"></ref>
+            <ref bean="moon"></ref>
+            <ref bean="jupiter"></ref>
+        </list>
+    </property>
+</bean>
+
+
+</beans>
